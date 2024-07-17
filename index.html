@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <main class="main-app container">
+      <header class="header">
+        <div class="logo">
+          <img src="assets/logo.svg" alt="" class="logo-image" />
+          <h1>Kalkulator <span>BMI</span></h1>
+        </div>
+        <p>
+          Berat badan ideal adalah impian semua orang. tidak hanya memiliki
+          bentuk tubuh yang menunjang penampilan. Berat badan ideal juga
+          menandakan kondisi tubuh yang sehat. Bagaimana denganmu?
+        </p>
+        <p>Yuk hitung sekarang di kalkulator BMI.</p>
+      </header>
+
+      <section class="bmi-form">
+        <form class="form-control" id="bmi-form">
+          <p>Jenis Kelamin</p>
+          <input type="radio" name="gender" id="pria" value="pria" />
+          <label for="pria">Pria</label>
+          <input type="radio" name="gender" id="wanita" value="wanita" />
+          <label for="wanita">Wanita</label>
+          <small class="error error-kelamin"></small>
+          <div>
+            <div>
+              <label for="berat-badan">Berat Badan (kg)</label>
+              <small class="error error-berat"></small>
+            </div>
+            <div class="input-field">
+              <img src="assets/pen.svg" alt="" class="icon-pen" />
+              <input type="number" onkeydown="return event.keyCode !== 69" name="berat-badan" id="berat-badan" autocomplete="off"/>
+            </div>
+          </div>
+          <div>
+            <div>
+              <label for="usia">Usia (tahun)</label>
+              <small class="error error-usia"></small>
+            </div>
+            <div class="input-field">
+              <img src="assets/pen.svg" alt="" class="icon-pen" />
+              <input type="number" onkeydown="return event.keyCode !== 69" name="usia" id="usia" autocomplete="off"/>
+            </div>
+          </div>
+          <div>
+            <div>
+              <label for="tinggi-badan">Tinggi Badan (cm)</label>
+              <small class="error error-tinggi"></small>
+            </div>
+            <div class="input-field">
+              <img src="assets/pen.svg" alt="" class="icon-pen" />
+              <input type="number" onkeydown="return event.keyCode !== 69" name="tinggi-badan" id="tinggi-badan" autocomplete="off"/>
+            </div>
+          </div>
+          <button type="submit" class="btn submit">Hitung BMI</button>
+          <button class="btn reset">Reset</button>
+        </form>
+      </section>
+
+      <article class="app-desc">
+        <h2>Keunggulan Fitur</h2>
+        <ol>
+          <li>Menghitung berat badan</li>
+          <li>Menentukan kategori berat badan ideal atau tidak</li>
+          <li>Mempersiapkan program penurunan berat badan</li>
+        </ol>
+
+        <p>
+          Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil
+          atau menyusui tidak boleh mengandalkan pembacaan BMI ini) dan tidak
+          ada tindakan yang harus diambil berdasarkan nilainya selain
+          berkonsultasi dengan orang yang memenuhi syarat seperti dokter.
+        </p>
+
+        <p>
+          Kalkulator akan memberi anda gambaran tentang perbandingan berat badan
+          anda dengan nilai umum Indeks Massa Tubuh (BMI) dihitung sebagai berat
+          badan anda (dalam kilogram) dibagi dengan kuadrat tinggi badan anda
+          (dalam meter) atau BMI = Kg/M<sup>2</sup>.
+        </p>
+      </article>
+    </main>
+
+    <section class="bmi-result container invisible">
+      <div class="go-back">
+        <img src="assets/arrow-left.svg" />
+        <p>Kembali ke halaman awal</p>
+      </div>
+
+      <article class="result">
+        <h1>Hasil</h1>
+        <div class="bmi-score">
+          <h2>Berat Badan <span class="desc-1"></span></h2>
+          <p class="display"></p>
+          <p>Anda memiliki berat badan <span class="desc-2"></span></p>
+            <button class="btn button-download">
+              <img src="assets/download.svg" class="download-icon" />
+              <p>Download Hasil BMI</p>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="description">
+        <p>Hasil BMI <span class="desc-3"></span></p>
+        <p>Anda berada dalam kategori <span class="desc-4"></span></p>
+        <p>
+          Cara terbaik <span class="desc-5"></span>
+        </p>
+        <p>
+          Jika BMI anda berada dalam kategori ini maka anda dianjurkan untuk
+          <span class="desc-6"></span>
+        </p>
+        <a href="#" class="btn btn-link">Konsultasi Ahli Gizi Via Aplikasi</a>
+        <a href="#" class="btn btn-link">Registrasi Online Ahli Gizi</a>
+        <p>BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran anda terkait dengan berat badan anda.</p>
+      </article>
+
+      <article class="example-disease">
+        <h3 class="desc-7"></h3>
+        <ul class="disease-list">
+        </ul>
+        <div>
+          <a href="#" class="btn btn-link">Konsultasi Dokter Via Aplikasi</a>
+
+          <a href="#" class="btn btn-link">Registrasi Online Sekarang</a>
+        </div>
+      </article>
+
+      <div class="download-app">
+        <p>Download Aplikasi</p>
+        <div class="app-card">
+          <img src="assets/google-play.svg" alt="" />
+          <img src="assets/app-store.svg" alt="" />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
